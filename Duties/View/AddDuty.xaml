@@ -1,0 +1,27 @@
+﻿<UserControl
+    x:Class="Duties.View.AddDuty"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Margin="10,10,0,0" Text="Dodaj dyżur"/>
+        <TextBlock Grid.Column="0" Grid.Row="1" Margin="10,10,0,0" TextWrapping="Wrap" Text="Dzień:"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Margin="10,10,0,0" TextWrapping="Wrap" Text="Godzina od:"/>
+        <TextBlock Grid.Column="2" Grid.Row="1" Margin="10,10,0,0" TextWrapping="Wrap" Text="Godzina do:"/>
+        <ComboBox Grid.Column="0" Grid.Row="2" Margin="10,10,0,0" ItemsSource="{Binding Path=DaySource,ValidatesOnDataErrors=True,ValidatesOnExceptions=True,UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding SelectedDay}"/>
+       
+
+                <TextBox Grid.Column="1" Grid.Row="2" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding Path=HourFrom,ValidatesOnDataErrors=True,ValidatesOnExceptions=True,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Column="2" Grid.Row="2" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding Path=HourTo, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+
+</UserControl>
